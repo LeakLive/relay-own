@@ -1,0 +1,15 @@
+# Relay-Own on Render, free Web Service.
+# No build step: this is plain Python stdlib, no npm, no pip install.
+# RELAY_KEY is deliberately NOT set here. Kayden sets it in the Render
+# dashboard as an Environment Variable, so no secret ever lives in
+# this file or in a repo.
+services:
+  - type: web
+    name: relay-own
+    env: python
+    plan: free
+    buildCommand: ""
+    startCommand: python server.py
+    envVars:
+      - key: RELAY_KEY
+        sync: false
